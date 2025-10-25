@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HeatUp — PWA Prototype</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">🔥 HeatUp</div>
+    <div class="slogan">Real People. Real Moments.</div>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label>Mode:
+        <select id="mode">
+          <option value="casual">Casual</option>
+          <option value="events">Events</option>
+          <option value="short_term">Short-term</option>
+          <option value="long_term">Long-term</option>
+          <option value="collab">Collaborations</option>
+          <option value="services">Services</option>
+        </select>
+      </label>
+
+      <label>Radius: <span id="rlabel">5 km</span>
+        <input id="radius" type="range" min="0.1" max="200" step="0.1" value="5">
+      </label>
+
+      <button id="btn-scan" class="btn">Scan Nearby</button>
+    </section>
+
+    <div id="map" style="height:60vh"></div>
+
+    <section class="list">
+      <h3>Nearby Matches / Services</h3>
+      <ul id="matches"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>Prototype: demo only. Best used via HTTPS (Netlify / GitHub Pages).</small>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
